@@ -110,6 +110,15 @@ var moneyTimeout = null;
             $(".stress").css("display", "none");
         }
 
+        if (data.oxygen > 0) {
+            $(".oxygen").css("display", "block");
+            $(".oxygen").find(".progressBar")
+            .attr("style", "width: " + data.oxygen + "%");
+            SetProgressBar(data.oxygen, '.progress-oxygen')
+        } else {
+            $(".oxygen").css("display", "none");
+        }        
+        
         $(".voice")
             switch(data.voice) {
                 case 1.0:
@@ -140,6 +149,15 @@ var moneyTimeout = null;
             $(".nos-text").css('display', 'none');
             $(".nos-label").css('display', 'none');
         }
+        
+        if (data.engine  != null ) {
+            $(".engine-text").css('display', 'block');
+            $(".engine-label").css('display', 'block');
+            $(".engine-text").html(data.engine);
+        } else {
+            $(".engine-text").css('display', 'none');
+            $(".engine-label").css('display', 'none');
+        }        
 
         $(".fuel-text").html((data.fuel).toFixed(0));
         $(".speed-text").html(data.speed);
