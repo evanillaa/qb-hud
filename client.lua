@@ -325,7 +325,7 @@ CreateThread(function()
             ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', ShakeIntensity)
             SetFlash(0, 0, 500, 2500, 500)
         end
-        Wait(Wait)
+        Citizen.Wait(Wait)
     end
 end)
 
